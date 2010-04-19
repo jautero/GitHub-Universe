@@ -1,1 +1,3 @@
-$(call github-user,$(error Insert your GitHub username here.))
+gituser:=$(error Insert your GitHub username here.)
+
+$(call github-watched,$(gituser))
