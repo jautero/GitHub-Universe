@@ -35,4 +35,4 @@ it doesn't require password and it will only get list of repositories that are p
 How do I use it?
 ----------------
 
-Just set apropriate **GitHub** user name in 
+Just set apropriate **GitHub** user name in `projects.make` and run `make help`.
