@@ -48,7 +48,10 @@ def main(argv=None):
         return 2
     gh=github.GitHub()
     for repo in gh.repos.watched(args[0]):
-        print >>output, "%s=%s" % (repo.name,repo.url)
+        print >>output, "%s=%s.git" % (repo.name,repo.url)
+        # HACK: API returns URL to repository page, not to the git repository.
+        # Hopefully this will work. (See: http://support.github.com/discussions/feature-requests/620-add-the-clone-url-to-repo-info)
+        # We should probably build it from owner and name, since in the above link that is promised to be stable, but I can't be bothered.
 
 
 if __name__ == "__main__":
