@@ -28,12 +28,11 @@ That way the rules are easier to maintain since changes need to be done only in 
 What does **GitHub Universe** do?
 ---------------------------------
 
-It uses **GitHub APi** through **github** Python  library and small Python command-line utility to get a list of repositories
+It uses **GitHub APi** through `py-github` Python library and small Python command-line utility to get a list of repositories
 watched by a given user. Then it uses `makefile` macros to build **universe.make** projects out of that. The end result is a `makefile`
 that can be used to check-out any project from **GitHub** that is watched by certain user. Since it uses the unauthorizing interface,
-it doesn't require password and it will only get list of repositories that are public information.
+it doesn't require API token and it will only get list of repositories that are public information.
 
 How do I use it?
 ----------------
-
-Just set apropriate **GitHub** user name in `projects.make` and run `make help`.
+First, install [`py-github`](http://github.com/dustin/py-github). Then just set apropriate **GitHub** user name in `projects.make` and run `make help`.
