@@ -13,7 +13,8 @@ What is *meta repository*?
 > you see. What you were is now what you act on. Verbs turn to nouns. What you used to 
 > think of as a pattern is now treated as a thing to put in the slot of an other pattern. 
 > A meta  foo is a foo in whose slots you can put foos.
-> - Guy L. Steele Jr. *Growing a Language*
+>
+> - **Guy L. Steele Jr.**, *Growing a Language*
 
 **Gnu Arch** has a concept of *meta project* which allows you to checkout multiple repositories into your work directory.
 We went a bit overboard with it when we started using **Gnu Arch** as our version control system at work. When we moved
