@@ -33,8 +33,6 @@ endef
 
 all: help
 
-
-include github.make
 include projects.make
 
 .PHONY: $(PROJECTS:=-help) help generic-help
