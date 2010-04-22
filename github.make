@@ -12,3 +12,11 @@ endef
 define githubwatched
 $(foreach repo,$(shell python get-watched.py $(1)),$(call githubhandlerepo,$(repo)))
 endef
+
+# Install github locally
+$(shell python -m github && touch py-github github) # If github module exists, setup github
+ 
+github: py-github
+	cd py-github; python setup.py install --install-pure ..
+
+$(eval $(call createproject,py-github,git,http://github.com/dustin/py-github.git,GitHub API python library))
