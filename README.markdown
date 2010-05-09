@@ -35,4 +35,9 @@ it doesn't require API token and it will only get list of repositories that are 
 
 How do I use it?
 ----------------
-First, install [`py-github`](http://github.com/dustin/py-github). Then just set apropriate **GitHub** user name in `projects.make` and run `make help`.
+
+    git clone git://github.com/jautero/GitHub-Universe.git github-watched
+    cd github-watched
+    make setup
+    make help
+
