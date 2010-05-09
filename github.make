@@ -20,3 +20,6 @@ github: py-github
 	cd py-github; python setup.py install --install-pure ..
 
 $(eval $(call createproject,py-github,git,http://github.com/dustin/py-github.git,GitHub API python library))
+
+setup: github
+	python setup.py
