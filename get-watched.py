@@ -7,7 +7,7 @@ Created by Juha Autero on 2010-04-19.
 Copyright (c) 2010 Juha Autero. All rights reserved.
 """
 
-import sys
+import sys, os
 import getopt
 from github import github
 
@@ -19,6 +19,15 @@ class Usage(Exception):
     def __init__(self, msg):
         self.msg = msg
 
+def get_github_token_from_git():
+    data_dict={"user":None,"token":None}
+    data=os.popen("git config github.user").read().strip()
+    if data != "":
+        data_dict["user"]=data
+    data=os.popen("git config github.token").read().strip()
+    if data != "":
+        data_dict["token"]=data
+    return data_dict
 
 def main(argv=None):
     output = sys.stdout
@@ -46,7 +55,8 @@ def main(argv=None):
         print >> sys.stderr, sys.argv[0].split("/")[-1] + ": " + str(err.msg)
         print >> sys.stderr, "\t for help use --help"
         return 2
-    gh=github.GitHub()
+    userdata=get_github_token_from_git()
+    gh=github.GitHub(**userdata)
     for repo in gh.repos.watched(args[0]):
         print >>output, "%s=%s.git" % (repo.name,repo.url)
         # HACK: API returns URL to repository page, not to the git repository.
